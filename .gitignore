@@ -1,0 +1,6 @@
+.vscode-test
+/node_modules
+/server/node_modules
+/server/out
+/client/node_modules
+/client/out
