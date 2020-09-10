@@ -11,3 +11,7 @@ Ferramenta desenvolvida para ajudar os desenvolvedores na criação de aplicaç�
 
 ## Licença
 Esta ferramenta possui licensa do MIT!
+
+
+## Contato
+Email: salmento_@hotmail.com
