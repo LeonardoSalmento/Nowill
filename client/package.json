@@ -2,7 +2,7 @@
 	"name": "nowill-client",
 	"description": "Nowill part of a language server",
 	"author": "Leonardo Salmento",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "LeonardoSalmento",
 	"repository": {
 		"type": "git",

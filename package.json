@@ -3,8 +3,9 @@
 	"displayName": "Nowill",
 	"description": "Supports devs",
 	"author": "Leonardo Salmento",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "LeonardoSalmento",
+	"icon": "Nowill.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/LeonardoSalmento/nowill"

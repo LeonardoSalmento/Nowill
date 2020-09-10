@@ -4,3 +4,4 @@
 /server/out
 /client/node_modules
 /client/out
+*.vsix
