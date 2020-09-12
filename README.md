@@ -10,7 +10,7 @@ Ferramenta desenvolvida para ajudar os desenvolvedores na criação de aplicaç�
 3. Abra um arquivo html ou Vue.js e use do plugin.
 
 ## Licença
-Esta ferramenta possui licensa do MIT!
+Esta ferramenta possui licença de uso do MIT!
 
 
 ## Contato
