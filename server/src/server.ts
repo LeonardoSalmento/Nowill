@@ -2,6 +2,7 @@
 const patterns: string[] = [
 	"<img (?:.)+?>",
 	"<input (?:.)+?>",
+	"<select (?:.)+?>",
 	"<a(?:.)+?>(?:.)+?<\/a>",
 	"<body(?:(?:\\s|\\S|))+?>",
 	"<html(?:(?:\\s|\\S|))+?>",
@@ -150,6 +151,23 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 				}
 				break;
 
+				//6.1 e 6.4 * Formulários
+				case(/<select (?:.+?)?onchange=(?:.+?)?/i.test(m[0])):
+					if(true){
+						problems++;
+						let message = "Não deve haver uma mudança automática, as mudanças devem acontecer através de um botão";
+						_diagnostics(m, message, 4);
+					}
+				
+				break;
+				case ((/<inpu(?:.+?)?type="reset"(?:.+?)?/i.test(m[0])) && (!	/<inpu(?:.+?)?value="(?:.+?)?"/i.test(m[0]))):
+					if (true){	
+						problems++;
+						let message = 'Forneça uma alternativa de texto para os botões type="reset" [value="Reset/Limpar"]';
+						_diagnostics(m, message, 4);
+					}
+				break;
+
 			//3.6 * Alternativa de texto para imagens
 			case ((/<img/i.test(el)) || (/<v-im/i.test(el))):
 				if ((!/alt="(?:.*?[a-z].*?)"/i.test(m[0])) && (!/alt=""/i.test(m[0]))) {
@@ -216,20 +234,6 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 						_diagnostics(m, message, 1);
 						break;
 					}
-				}
-				break;
-
-			//6.1 e 6.4 * Formulários
-			case(/<form/i.test(el)):
-				if(/<select (?:.+?)?onchange=(?:.+?)?/i.test(m[0])){
-					problems++;
-					let message = "Não deve haver uma mudança automática, as mudanças devem acontecer através de um botão";
-					_diagnostics(m, message, 4);
-				}
-				if ((/<inpu(?:.+?)?type="reset"(?:.+?)?/i.test(m[0])) && (!	/<inpu(?:.+?)?value="(?:.+?)?"/i.test(m[0]))){
-					problems++;
-					let message = 'Forneça uma alternativa de texto para os botões type="reset" [value="Reset/Limpar"]';
-					_diagnostics(m, message, 4);
 				}
 				break;
 				
